@@ -5,12 +5,11 @@ import { SearchResult } from './search-result'
 import { KeywordSearch } from './keyword-search'
 import { CategorySelect } from './category-select'
 import { SearchButton } from './search-button'
-import mockData from '../mockData.json'
 
 function SearchColumn({ apiKey, handleResultSave, handleResultDelete }) {
   const [keywordQuery, setKeywordQuery] = useState('')
   const [category, setCategory] = useState('')
-  const [searchResults, setSearchResults] = useState(mockData.hits.slice(0, 3))
+  const [searchResults, setSearchResults] = useState([])
 
   const handleCategoryInput = function(event) {
     setCategory(event.target.value)
